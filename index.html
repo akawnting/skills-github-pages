@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffdde1;
+            text-align: center;
+        }
+        .container {
+            position: relative;
+            max-width: 90%;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 192, 203, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .hidden {
+            display: none;
+        }
+        button {
+            background: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #e91e63;
+        }
+        iframe {
+            width: 100%;
+            height: 200px;
+            max-width: 560px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="overlay" id="overlay">
+            <h2>Will you be my Valentine? ❤️</h2>
+            <button onclick="revealVideo()">Yes!</button>
+        </div>
+        <iframe id="video" class="hidden" src="https://youtube.com/embed/XAiBcIWZv6g?feature=share" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function revealVideo() {
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('video').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
